@@ -472,4 +472,11 @@ function main(){
     .update();
 }
 
+const enlargeBtn = document.querySelector('.btn-enlarge');
+enlargeBtn.addEventListener('click',()=>{
+  let cy = document.querySelector("#cy");
+  cy.style.width = "50%";
+  cy.style.height = "90vh";
+})
+
 main();

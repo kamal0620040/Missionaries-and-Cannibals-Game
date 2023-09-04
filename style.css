@@ -176,6 +176,13 @@ body {
     scale: 105%;
 }
 
+.btn-enlarge{
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    z-index: 1000;
+}
+
 #cy {
     width: 20%;
     height: 65vh;
