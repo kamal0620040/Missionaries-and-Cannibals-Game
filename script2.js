@@ -1,18 +1,6 @@
 let cy = cytoscape({
     container: document.getElementById('cy'), // container to render in
 
-//     elements: [ // list of graph elements to start with
-//     { // node a
-//       data: { id: 'a' }
-//     },
-//     { // node b
-//       data: { id: 'b' }
-//     },
-//     { // edge ab
-//       data: { id: 'ab', source: 'a', target: 'b' }
-//     }
-//   ],
-
   style: [ // the stylesheet for the graph
     {
       selector: 'node',
@@ -287,14 +275,7 @@ function bfs(initialState){
         if(!node.isKilled()){
             for (let i = 0; i < children.length; i++) {
                 let child = children[i];
-                console.log("explored");
-                console.log(explored);
-                
-                console.log("child");
-                console.log(child.state);
 
-                console.log(isSubArrayPresent(explored,child.state));
-                
                 if(!isSubArrayPresent(explored,child.state)){
                     if(child.isGoalState()){
 
@@ -308,8 +289,8 @@ function bfs(initialState){
                 
                         nodesList.push(newNodeData);
 
-                        let diff = subtractArrays(node.parent.state, node.state);
-                        if(node.parent.state[2] == 0){
+                        let diff = subtractArrays(child.parent.state, child.state);
+                        if(child.parent.state[2] == 0){
                             diff[0] = -diff[0];
                             diff[1] = -diff[1];
                         }
