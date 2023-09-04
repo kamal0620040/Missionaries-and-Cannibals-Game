@@ -183,6 +183,20 @@ body {
     z-index: 1000;
 }
 
+.btn-truncate{
+    position: absolute;
+    right: 5%;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.btn-start{
+    position: absolute;
+    right: 10%;
+    padding: 5px;
+    z-index: 1000;
+}
+
 #cy {
     width: 20%;
     height: 65vh;

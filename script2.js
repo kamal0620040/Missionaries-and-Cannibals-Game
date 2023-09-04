@@ -395,7 +395,7 @@ function main(){
 
                 j++;
                 cy.layout(options).run();
-                setTimeout(addEdgeWithDelay, 10);
+                setTimeout(addEdgeWithDelay, 1000);
             }else{
 
                 // Highlight the path between node1 and node4
@@ -455,9 +455,26 @@ function main(){
 
 const enlargeBtn = document.querySelector('.btn-enlarge');
 enlargeBtn.addEventListener('click',()=>{
-  let cy = document.querySelector("#cy");
-  cy.style.width = "50%";
-  cy.style.height = "90vh";
+  let currentWidth = document.getElementById('cy').offsetWidth; // Get current width in pixels
+  let newWidth = currentWidth + 100; // Calculate new width
+  console.log(newWidth)
+  // Update the width of the div
+  document.getElementById('cy').style.width = newWidth + 'px';
+  document.getElementById('cy').style.height = "90vh";
 })
 
-main();
+const regenerateBtn = document.querySelector('.btn-truncate');
+regenerateBtn.addEventListener('click',()=>{
+  let currentWidth = document.getElementById('cy').offsetWidth; // Get current width in pixels
+  let newWidth = currentWidth - 100; // Calculate new width
+  console.log(newWidth)
+  // Update the width of the div
+  document.getElementById('cy').style.width = newWidth + 'px';
+  document.getElementById('cy').style.height = "90vh";
+})
+
+const startBtn = document.querySelector('.btn-start');
+startBtn.addEventListener('click',()=>{
+  main();
+})
+

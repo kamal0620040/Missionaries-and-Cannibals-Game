@@ -338,7 +338,7 @@ class Game{
     
 }
 
-function main(){
+function mainFunction(){
     let g = new Game();
     submitBtn.addEventListener('click',() => {
         g.applyAction(inputField.value);
@@ -349,7 +349,7 @@ function main(){
     })
 }
 
-main();
+mainFunction();
 
 // Array of node IDs to highlight
 var nodeListToHighlight = ['03,3,1'];
