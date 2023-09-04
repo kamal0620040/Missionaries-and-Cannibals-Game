@@ -1,88 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Rancho&effect=anaglyph|brick-sign|canvas-print|crackle|decaying|destruction|distressed|distressed-wood|emboss|fire|fire-animation|fragile|grass|ice|mitosis|neon|outline|putting-green|scuffed-steel|shadow-multiple|splintered|static|stonewash|3d|3d-float|vintage|wallpaper" />
 </head>
+
 <body>
     <div>
+        <div>
+            <h1 class="main-heading font-effect-outline">Missionaries<br /> and Cannibals </h1>
+        </div>
         <div class="land"></div>
         <div class="land right-land"></div>
-    <div class="boat boat-left">
-        <img src="assets/boat.png" class="boat" />
-        <div class="positionOne">
-            <!-- <img src="assets/man.png" /> -->
+        <div class="boat boat-left">
+            <img src="assets/boat.png" class="boat" />
+            <div class="positionOne">
+                <!-- <img src="assets/man.png" /> -->
+            </div>
+            <div class="positionTwo">
+                <!-- <img src="assets/man.png" /> -->
+            </div>
         </div>
-        <div class="positionTwo">
-            <!-- <img src="assets/man.png" /> -->
+        <div class="water">
+            <img src="assets/water.png" class="water-img" />
         </div>
-    </div>
-    
-    <div class="monstors monstors-left">
-        <div class="monstor">
-            <img src="assets/monstor.png" />
+        <div class="monstors monstors-left">
+            <div class="monstor">
+                <img src="assets/monstor.png" />
+            </div>
+            <div class="monstor">
+                <img src="assets/monstor.png" />
+            </div>
+            <div class="monstor">
+                <img src="assets/monstor.png" />
+            </div>
         </div>
-        <div class="monstor">
-            <img src="assets/monstor.png" />
-        </div>
-        <div class="monstor">
-            <img src="assets/monstor.png" />
-        </div>
-    </div>
-    
-    <div class="mans mans-left">
-        <div class="man">
-            <img src="assets/man.png" />
-        </div>
-        <div class="man">
-            <img src="assets/man.png" />
-        </div>
-        <div class="man">
-            <img src="assets/man.png" />
-        </div>
-    </div>
-    
-    <div class="monstors monstors-right">
-        <!-- <div class="monstor">
-            <img src="assets/monstor.png" />
-        </div>
-        <div class="monstor">
-            <img src="assets/monstor.png" />
-        </div>
-        <div class="monstor">
-            <img src="assets/monstor.png" />
-        </div> -->
-    </div>
-    
-    <div class="mans mans-right">
-        <!-- <div class="man">
-            <img src="assets/man.png" />
-        </div>
-        <div class="man">
-            <img src="assets/man.png" />
-        </div>
-        <div class="man">
-            <img src="assets/man.png" />
-        </div> -->
-    </div>
 
-    <div class="model hidden">
-        <div class="model-container">
-            <h1 class="model-heading">Game Over</h1>
-            <button id="playAgain">Play Again</button>
+        <div class="mans mans-left">
+            <div class="man">
+                <img src="assets/man.png" />
+            </div>
+            <div class="man">
+                <img src="assets/man.png" />
+            </div>
+            <div class="man">
+                <img src="assets/man.png" />
+            </div>
+        </div>
+
+        <div class="monstors monstors-right">
+            <!-- <div class="monstor">
+            <img src="assets/monstor.png" />
+        </div>
+        <div class="monstor">
+            <img src="assets/monstor.png" />
+        </div>
+        <div class="monstor">
+            <img src="assets/monstor.png" />
+        </div> -->
+        </div>
+
+        <div class="mans mans-right">
+            <!-- <div class="man">
+            <img src="assets/man.png" />
+        </div>
+        <div class="man">
+            <img src="assets/man.png" />
+        </div>
+        <div class="man">
+            <img src="assets/man.png" />
+        </div> -->
+        </div>
+
+        <div class="model hidden">
+            <div class="model-container">
+                <h1 class="model-heading">Game Over</h1>
+                <button id="playAgain">Play Again</button>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input id="actionInput" />
+            <button class="submit-btn">Submit</button>
         </div>
     </div>
-    
-    <div class="input-container">
-        <input id="actionInput" />
-        <button class="submit-btn">Submit</button>
+    <div class="graph-container">
+        <button>Enlarge</button>
+        <div id="cy"></div>
     </div>
-    </div>
-    <div id="cy"></div>
     <script src="node_modules/cytoscape/dist/cytoscape.min.js"></script>
     <script src="script2.js"></script>
     <script src="script3.js"></script>
 </body>
+
 </html>

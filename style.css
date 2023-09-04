@@ -9,6 +9,17 @@ body {
     background: linear-gradient(to bottom, #EFCC68,#F6F6F6 , #393939);
 }
 
+
+.main-heading{
+    font-family: 'Rancho';
+    font-size: 68px;
+    line-height: 0.8;
+    margin: 0;
+    position: absolute;
+    left: 38%;
+    top: 5%;
+}
+
 .land{
     height: 30%;
     width: 32%;
@@ -30,21 +41,32 @@ body {
 
 .boat .positionOne{
     position: absolute;
-    bottom: 60px;
+    bottom: 35px;
 }
 
 .boat .positionTwo{
     position: absolute;
-    bottom: 60px;
+    bottom: 38px;
     left: 130px;
 }
 
 .boat-left{
-    left: 30%;
+    left: 32%;
 }
 
 .boat-right{
-    right: 45%;
+    right: 46%;
+}
+
+.water{
+    position: absolute;
+    bottom: 0;
+    left: 31.9%;
+}
+
+.water-img{
+    height: 220px;
+    width: 552px;
 }
 /* 
 .move-right{
@@ -131,9 +153,35 @@ body {
     display: none;
 }
 
+#actionInput{
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn{
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-family: sans-serif;
+    background-color: black;
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+}
+
+.submit-btn:active{
+    scale: 105%;
+}
+
 #cy {
     width: 20%;
-    height: 95vh;
+    height: 65vh;
     display: block;
-    border: 2px solid hotpink;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
 }
