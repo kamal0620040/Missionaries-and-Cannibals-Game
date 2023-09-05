@@ -232,7 +232,7 @@ function bfs(initialState){
     
     let q = new Queue();
     q.enqueue(startNode);
-    let explored = [];
+    let explored = [[3,3,1]];
     let killed = [];
     while(!q.isEmpty()){
         node = q.dequeue();
