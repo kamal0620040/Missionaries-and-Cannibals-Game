@@ -326,10 +326,162 @@ function bfs(initialState){
     return;
 }
 
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(item) {
+    this.items.push(item);
+  }
+
+  pop() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.items.pop();
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.items[this.items.length - 1];
+  }
+
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  size() {
+    return this.items.length;
+  }
+
+  clear() {
+    this.items = [];
+  }
+}
+
+function dfs(initialState){
+  startNode = new Node(initialState, null, null, 0);
+  
+  if (startNode.isGoalState()){
+    return;
+  }
+  
+  let q = new Stack();
+  q.push(startNode);
+  let explored = [[3,3,1]];
+  let killed = [];
+  while(!q.isEmpty()){
+      node = q.pop();
+      
+
+
+      let newNodeData = {
+          group: 'nodes',
+          data: {
+            id: String(node.depth) + String(node.state),
+            label: String(node.state),
+          },
+      };
+      
+      nodesList.push(newNodeData);
+
+
+
+      if(node.parent){
+          let diff = subtractArrays(node.parent.state, node.state);
+          if(node.parent.state[2] == 0){
+              diff[0] = -diff[0];
+              diff[1] = -diff[1];
+          }
+          let newEdgeData = {
+              group: 'edges',
+              data: {
+                id: String(Math.random()) + String(diff),
+                source: String(node.parent.depth) + String(node.parent.state), // ID of the source node
+                target: String(node.depth) + String(node.state), // ID of the target node
+                label: String(diff),
+              }
+          };
+
+          edgesList.push(newEdgeData);
+      }
+
+      let children = node.generateChild();
+      console.log(children);
+      if(!node.isKilled()){
+          for (let i = 0; i < children.length; i++) {
+              let child = children[i];
+
+              if(!isSubArrayPresent(explored,child.state)){
+                  if(child.isGoalState()){
+
+                      let newNodeData = {
+                          group: 'nodes',
+                          data: {
+                            id: String(child.depth) + String(child.state),
+                            label: String(child.state)
+                          },
+                      };
+              
+                      nodesList.push(newNodeData);
+
+                      let diff = subtractArrays(child.parent.state, child.state);
+                      if(child.parent.state[2] == 0){
+                          diff[0] = -diff[0];
+                          diff[1] = -diff[1];
+                      }
+
+                      let newEdgeData = {
+                          group: 'edges',
+                          data: {
+                            id: String(Math.random()) + String(diff),
+                            source: String(child.parent.depth) + String(child.parent.state), // ID of the source node
+                            target: String(child.depth) + String(child.state), // ID of the target node
+                            label: String(diff),
+                          }
+                      };
+                      try{
+                          edgesList.push(newEdgeData);
+                      }catch(e){
+                          console.log(e);
+                      }
+                      
+                      return;
+                  }
+                  if(child.isValid()){
+                      q.push(child);
+                      explored.push(child.state);
+                  }
+              }
+          }
+      }else{
+          killed.push(node.state);
+      }
+      console.log(q.items);
+  }
+  console.log("returned")
+  return;
+}
+
 function main(){
     let initialState = [3, 3, 1];
+
+    // Get the current URL
+    const currentUrl = window.location.href;
+    // Create a URL object with the current URL
+    const url = new URL(currentUrl);
+    // Get the value of the 'method' parameter
+    const methodParam = url.searchParams.get('method');
+    if(methodParam == 'dfs'){
+      dfs(initialState);
+    }else{
+      bfs(initialState);
+    }
+
     
-    bfs(initialState);
     
 
     console.log(nodesList);
